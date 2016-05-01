@@ -23,6 +23,7 @@ var api = new ParseServer({
   //   domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
   //   fromAddress: 'creativesoftwareios@gmail.com'
   // }),
+  publicServerURL: 'https://emailtest01.herokuapp.com/parse',
 emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
     options: {
