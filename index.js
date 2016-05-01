@@ -23,18 +23,27 @@ var api = new ParseServer({
   //   domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
   //   fromAddress: 'creativesoftwareios@gmail.com'
   // }),
+  // publicServerURL: 'https://emailtest01.herokuapp.com/parse',
+  // Enable email verification
+  verifyUserEmails: true,
+  // The public URL of your app.
+  // This will appear in the link that is used to verify email addresses and reset passwords.
+  // Set the mount path as it is in serverURL
   publicServerURL: 'https://emailtest01.herokuapp.com/parse',
-emailAdapter: {
+  // Your apps name. This will appear in the subject and body of the emails that are sent.
+  appName: 'Parse App',
+  // The email adapter
+  emailAdapter: {
     module: 'parse-server-simple-mailgun-adapter',
     options: {
       // The address that your emails come from
-      fromAddress: 'creativesoftwareios@gmail.com',
+      fromAddress: 'parse@example.com',
       // Your domain from mailgun.com
       domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
       // Your API key from mailgun.com
       apiKey: 'key-b54a309ea20924558ea6f22a007bb8ee',
     }
-  }
+  },
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
