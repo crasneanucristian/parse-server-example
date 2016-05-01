@@ -24,12 +24,12 @@ var api = new ParseServer({
     domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
     fromAddress: 'creativesoftwareios@gmail.com'
   }),
-  customPages: {
-    invalidLink: 'http://yourpage/link_invalid.html',
-    verifyEmailSuccess: 'http://yourpage/verify_email_success.html',
-    choosePassword: 'http://yourpage/new_password.html',
-    passwordResetSuccess: 'http://yourpage/sucess.html'
-  }
+  // customPages: {
+  //   invalidLink: 'http://yourpage/link_invalid.html',
+  //   verifyEmailSuccess: 'http://yourpage/verify_email_success.html',
+  //   choosePassword: 'http://yourpage/new_password.html',
+  //   passwordResetSuccess: 'http://yourpage/sucess.html'
+  // }
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
