@@ -18,7 +18,7 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'emailTestAppId',
   masterKey: process.env.MASTER_KEY || 'emailTestMasterKey', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'https://emailtest01.herokuapp.com/parse',  // Don't forget to change to https if needed
-  publicServerURL: "http://emailtest01.herokuapp.com/parse",
+  publicServerURL: "https://emailtest01.herokuapp.com/parse",
   emailAdapter: new SimpleMailgunAdapter({
     apiKey: 'key-b54a309ea20924558ea6f22a007bb8ee',
     domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
