@@ -17,16 +17,18 @@ var api = new ParseServer({
   appId: process.env.APP_ID || 'emailTestAppId',
   masterKey: process.env.MASTER_KEY || 'emailTestMasterKey', //Add your master key here. Keep it secret!
   serverURL: process.env.SERVER_URL || 'https://emailtest01.herokuapp.com/parse',  // Don't forget to change to https if needed
-  emailAdapter: {
-    module: 'parse-server-simple-mailgun-adapter',
-    options: {
-      // The address that your emails come from
-      fromAddress: 'creativesoftwareios@gmail.com',
-      // Your domain from mailgun.com
-      domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
-      // Your API key from mailgun.com
-      apiKey: 'key-b54a309ea20924558ea6f22a007bb8ee',
-    },
+  publicServerURL: "http://emailtest01.herokuapp.com/parse",
+  emailAdapter: new SimpleMailgunAdapter({
+    apiKey: 'key-b54a309ea20924558ea6f22a007bb8ee',
+    domain: 'sandboxb6015be984e349a4a51038c5e18fc422.mailgun.org',
+    fromAddress: 'creativesoftwareios@gmail.com'
+  }),
+  customPages: {
+    invalidLink: 'http://yourpage/link_invalid.html',
+    verifyEmailSuccess: 'http://yourpage/verify_email_success.html',
+    choosePassword: 'http://yourpage/new_password.html',
+    passwordResetSuccess: 'http://yourpage/sucess.html'
+  }
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   }
